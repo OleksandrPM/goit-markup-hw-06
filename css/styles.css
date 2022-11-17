@@ -654,6 +654,7 @@ svg {
 
   min-width: 528px;
   min-height: 581px;
+  padding: 40px;
 
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -697,6 +698,70 @@ svg {
 .modal-close-button:focus {
   fill: var(--clear-white-color);
   background-color: var(--brand-color);
+}
+
+.modal > h2 {
+  margin-bottom: 12px;
+
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+.callback-form > label {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 10px;
+
+  cursor: pointer;
+}
+
+.callback-form > label > span {
+  margin-bottom: 4px;
+
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+}
+
+.input-field {
+  height: 40px;
+  padding-left: 42px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.callback-form > label > svg{
+  position: absolute;
+  left: 12px;
+  bottom: 11px;
+}
+
+.callback-form .comment-label {
+  margin-bottom: 20px;
+}
+
+.comment-label > textarea {
+  height: 120px;
+  padding: 12px 16px;
+
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.callback-form .checkbox-label {
+  flex-direction: row;
+  margin-bottom: 30px;
+  align-items: center;
+
+  line-height: 1.71;
+  letter-spacing: 0.03em;
 }
 
 /* Main in portfolio.html */
