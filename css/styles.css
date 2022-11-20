@@ -691,13 +691,12 @@ svg {
 
   transition-duration: var(--normal-transition-duration);
   transition-timing-function: var(--normal-transition-timing-function);
-  transition-property: fill, background-color;
+  transition-property: fill;
 }
 
 .modal-close-button:hover,
 .modal-close-button:focus {
-  fill: var(--clear-white-color);
-  background-color: var(--brand-color);
+  fill: var(--brand-color);
 }
 
 .modal > h2 {
@@ -709,7 +708,6 @@ svg {
 }
 
 .callback-form > label {
-  position: relative;
   display: flex;
   flex-direction: column;
 
@@ -726,24 +724,54 @@ svg {
   letter-spacing: 0.01em;
 }
 
-.input-field {
-  height: 40px;
-  padding-left: 42px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
+.input-form {
+  position: relative;
 }
 
-.callback-form > label > svg{
+.input-field {
+  width: 100%;
+  height: 40px;
+  padding-left: 42px;
+
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
+
+  cursor: pointer;
+
+  transition-duration: var(--normal-transition-duration);
+  transition-timing-function: var(--normal-transition-timing-function);
+  transition-property: border-color;
+}
+
+.callback-form > label:hover .input-field,
+.callback-form > label:focus .input-field {
+  border-color: var(--brand-color);
+}
+
+.input-form > svg {
   position: absolute;
   left: 12px;
-  bottom: 11px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  transition-duration: var(--normal-transition-duration);
+  transition-timing-function: var(--normal-transition-timing-function);
+  transition-property: fill;
+}
+
+.callback-form > label:hover .icon,
+.callback-form > label:hover .icon {
+  fill: var(--brand-color);
 }
 
 .callback-form .comment-label {
   margin-bottom: 20px;
 }
 
-.comment-label > textarea {
+.comment-label .input-field {
   height: 120px;
   padding: 12px 16px;
 
@@ -751,17 +779,110 @@ svg {
   line-height: 1.17;
   letter-spacing: 0.01em;
 
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
+  resize: none;
 }
 
-.callback-form .checkbox-label {
-  flex-direction: row;
-  margin-bottom: 30px;
-  align-items: center;
+.comment-label .input-field::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+}
 
+.checkbox-field {
+  display: flex;
+  margin-bottom: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox-label {
+  position: relative;
+  width: 16px;
+  height: 15px;
+  margin-right: 7px;
+
+  cursor: pointer;
+}
+
+.checkbox-label > input {
+  opacity: 0;
+}
+
+.check-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  opacity: 1;
+
+  transition-duration: var(--normal-transition-duration);
+  transition-timing-function: var(--normal-transition-timing-function);
+  transition-property: opacity, fill;
+}
+
+.checkbox-label > input:hover ~ .check-frame,
+.checkbox-label > input:focus ~ .check-frame {
+  fill: var(--brand-color);
+}
+
+.checkbox-label > input:checked ~ .check-frame {
+  opacity: 0;
+}
+
+.check-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+
+  transition-duration: var(--normal-transition-duration);
+  transition-timing-function: var(--normal-transition-timing-function);
+  transition-property: opacity;
+}
+
+.checkbox-label > input:checked ~ .check-icon {
+  opacity: 1;
+}
+
+.checkbox-field > p {
   line-height: 1.71;
   letter-spacing: 0.03em;
+}
+
+.checkbox-field .link {
+  color: var(--brand-color);
+  text-decoration: underline;
+}
+
+.callback-form .button {
+  display: block;
+  width: 200px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+
+  color: var(--clear-white-color);
+  background-color: var(--brand-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+
+  transition-duration: var(--normal-transition-duration);
+  transition-timing-function: var(--normal-transition-timing-function);
+  transition-property: background-color;
+}
+
+.callback-form .button:hover,
+.callback-form .button:focus {
+  background-color: #188ce8;
 }
 
 /* Main in portfolio.html */
