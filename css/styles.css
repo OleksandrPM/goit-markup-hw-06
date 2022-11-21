@@ -547,7 +547,7 @@ svg {
 }
 
 .invitation {
-  margin-right: 93px;
+  margin-right: auto;
 }
 
 .footer-title {
@@ -580,7 +580,7 @@ svg {
   line-height: 1.25;
   letter-spacing: 0.03em;
 
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--clear-white-color);
   background-color: inherit;
 
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -733,25 +733,18 @@ svg {
   height: 40px;
   padding-left: 42px;
 
+  cursor: pointer;
+
   border-width: 1px;
   border-style: solid;
   border-color: rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  outline: none;
 
-  cursor: pointer;
-
-  transition-duration: var(--normal-transition-duration);
-  transition-timing-function: var(--normal-transition-timing-function);
-  transition-property: border-color;
+  outline-width: 1px;
+  outline-color: var(--brand-color);
 }
 
-.callback-form > label:hover .input-field,
-.callback-form > label:focus .input-field {
-  border-color: var(--brand-color);
-}
-
-.input-form > svg {
+.input-form .icon {
   position: absolute;
   left: 12px;
   top: 50%;
@@ -762,8 +755,7 @@ svg {
   transition-property: fill;
 }
 
-.callback-form > label:hover .icon,
-.callback-form > label:hover .icon {
+.input-field:focus ~ .icon {
   fill: var(--brand-color);
 }
 
@@ -786,14 +778,16 @@ svg {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.checkbox-field {
-  display: flex;
+.callback-form .checkbox-label {
+  position: relative;
+  flex-direction: row;
   margin-bottom: 30px;
-  justify-content: center;
+
   align-items: center;
+  justify-content: center;
 }
 
-.checkbox-label {
+.checkbox-icon {
   position: relative;
   width: 16px;
   height: 15px;
@@ -802,7 +796,7 @@ svg {
   cursor: pointer;
 }
 
-.checkbox-label > input {
+.checkbox-icon > input {
   opacity: 0;
 }
 
@@ -820,12 +814,11 @@ svg {
   transition-property: opacity, fill;
 }
 
-.checkbox-label > input:hover ~ .check-frame,
-.checkbox-label > input:focus ~ .check-frame {
+/* .checkbox-label:hover .check-frame {
   fill: var(--brand-color);
-}
+} */
 
-.checkbox-label > input:checked ~ .check-frame {
+.checkbox-icon > input:checked ~ .check-frame {
   opacity: 0;
 }
 
@@ -843,16 +836,16 @@ svg {
   transition-property: opacity;
 }
 
-.checkbox-label > input:checked ~ .check-icon {
+.checkbox-icon > input:checked ~ .check-icon {
   opacity: 1;
 }
 
-.checkbox-field > p {
+.checkbox-label > p {
   line-height: 1.71;
   letter-spacing: 0.03em;
 }
 
-.checkbox-field .link {
+.checkbox-label > p > a {
   color: var(--brand-color);
   text-decoration: underline;
 }
